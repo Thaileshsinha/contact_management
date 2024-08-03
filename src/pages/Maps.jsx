@@ -6,9 +6,14 @@ import { MapContainer, TileLayer } from "react-leaflet";
 
 const Maps = () => {
   const [countriesData, setCountriesData] = useState([]);
+  const [latestData, setLatestData] = useState({
+    cases: "",
+    active: "",
+    recovered: "",
+  });
 
   const { data, isError, isLoading, error } = useQuery({
-    queryKey: ["fetchCountryData"],
+    queryKey: ["conturyData"],
     queryFn: fetchCountryData,
   });
   const worldData = useQuery({
@@ -21,8 +26,9 @@ const Maps = () => {
   useEffect(() => {
     if (data) {
       setCountriesData(data);
+      setLatestData(worldData.data);
     }
-  }, [data]);
+  }, [data, worldData]);
 
   return (
     <>
@@ -32,13 +38,13 @@ const Maps = () => {
         </h1>
         <div className="flex flex-col my-3 ">
           <p className="text-[18px] font-bold">
-            Total Cases: {worldData.data.cases}
+            Total Cases: {latestData.cases}
           </p>
           <p className="text-[18px] font-bold">
-            Total Active Cases: {worldData.data.active}
+            Total Active Cases: {latestData.active}
           </p>
           <p className="text-[18px] font-bold">
-            Total Recovered: {worldData.data.recovered}
+            Total Recovered: {latestData.recovered}
           </p>
         </div>
         <div className="border-2 border-blue-500 w-11/12 m-auto p-5">

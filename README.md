@@ -5,7 +5,7 @@ The app includes a dashboard with charts and maps that display COVID-19 data for
 
 # Deployed Link : -
 
-https://contact-management-app-teal.vercel.app/
+https://contact-management-seven-neon.vercel.app/
 
 # Pages and Functionality
 

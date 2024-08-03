@@ -14,5 +14,6 @@ export const fetchGraphData = async () => {
 
 export const fetchCountryData = async () => {
   const { data } = await axios.get("https://disease.sh/v3/covid-19/countries");
+  console.log(data);
   return data;
 };
