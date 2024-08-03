@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   createContact,
   deleteContact,
-  isPopupOpen,
-  updateContact, // Add an update action if you don't have one already
+  updateContact,
 } from "../redux/contactSlice";
 
 const Contact = () => {
@@ -44,6 +43,7 @@ const Contact = () => {
     });
   };
 
+  //   handle update and create
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isEditing) {
@@ -65,10 +65,11 @@ const Contact = () => {
     closeModal();
   };
 
+  //   handle delete
   const handleDelete = (id) => {
     dispatch(deleteContact(id));
   };
-
+  // handle edit
   const handleEdit = (data) => {
     setContactData(data);
     setIsEditing(true);
@@ -85,6 +86,8 @@ const Contact = () => {
         >
           Create New Contact
         </button>
+
+        {/* no contact */}
         {contacts.length === 0 && (
           <div className="bg-white p-4 rounded-[20px] w-[90%] my-4 mx-auto h-auto">
             <h1 className="text-3xl font-bold text-center">
@@ -92,7 +95,7 @@ const Contact = () => {
             </h1>
           </div>
         )}
-
+        {/* popup modal */}
         {isModalOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
             <div className="relative p-4 w-full max-w-md max-h-full">
@@ -209,7 +212,7 @@ const Contact = () => {
             </div>
           </div>
         )}
-
+        {/* contact list */}
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4">
           {contacts.map((contact) => (
             <div
@@ -229,7 +232,7 @@ const Contact = () => {
               <p
                 className={`mb-2 text-[18px]  font-bold tracking-tight text-gray-900 dark:text-white `}
               >
-                Status :{" "}
+                Status :
                 <span
                   className={`${
                     contact.status === "active" ? "bg-green-200" : "bg-red-200"

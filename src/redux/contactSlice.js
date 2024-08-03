@@ -9,14 +9,17 @@ export const contactSlice = createSlice({
   name: "contact",
   initialState,
   reducers: {
+    // create a new contact
     createContact: (state, action) => {
       state.contactData.push(action.payload);
     },
+    // delete a contact
     deleteContact: (state, action) => {
       state.contactData = state.contactData.filter(
         (contact) => contact.id !== action.payload
       );
     },
+    // update a contact
     updateContact: (state, action) => {
       const index = state.contactData.findIndex(
         (contact) => contact.id === action.payload.id
@@ -25,9 +28,7 @@ export const contactSlice = createSlice({
         state.contactData[index] = action.payload;
       }
     },
-    readContacts: (state) => {
-      return state.contactData;
-    },
+
     isPopupOpen: (state) => {
       state.isPopupOpen = !state.isPopupOpen;
     },
@@ -35,12 +36,7 @@ export const contactSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const {
-  createContact,
-  deleteContact,
-  updateContact,
-  readContacts,
-  isPopupOpen,
-} = contactSlice.actions;
+export const { createContact, deleteContact, updateContact, isPopupOpen } =
+  contactSlice.actions;
 
 export default contactSlice.reducer;
