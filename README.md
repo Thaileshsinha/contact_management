@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Contact Management App with Charts and Maps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a contact management app built using ReactJS, JavaScript, TailwindCSS, React Router v6, and Redux.
+The app includes a dashboard with charts and maps that display COVID-19 data for different countries.
 
-## Available Scripts
+# Deployed Link : -
 
-In the project directory, you can run:
+https://contact-management-app-teal.vercel.app/
 
-### `npm start`
+# Pages and Functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app has two main pages:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Contacts
 
-### `npm test`
+This page allows you to manage your contacts. You can add a new contact by filling out the form, and the contact will be added to the list. You can also edit or delete an existing contact. Clicking on a contact's name will take you to the contact details page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Charts and Maps
 
-### `npm run build`
+This page displays COVID-19 data for different countries. It includes a line graph showing the cases fluctuations over
+time and a map with markers that indicate the country name, total number of active,
+recovered cases, and deaths in that particular country as a popup.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# APIs Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app uses the following APIs to fetch data:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- World wide data of cases: https://disease.sh/v3/covid-19/all
+- Country Specific data of cases: https://disease.sh/v3/covid-19/countries
+- Graph data for cases with date: https://disease.sh/v3/covid-19/historical/all?lastdays=all
 
-### `npm run eject`
+#Technologies Used
+The following technologies were used to build this app:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ReactJS
+- JavaScript
+- TailwindCSS
+- React Router v6
+- React Query
+- Redux
+- TanstackQuery
+- react-leaflet
+- react-chartjs-2
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To run this app, follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clone this repository: git clone https://github.com/Thaileshsinha/contact_management
+- Install the dependencies: npm install
+- Start the app: npm start
+- The app should open in your default browser at http://localhost:3000/.
